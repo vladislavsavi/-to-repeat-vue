@@ -1,6 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>{{ title }}</h1>
+  <HelloWorld :change="changeTitle"/>
 </template>
 
 <script>
@@ -10,6 +11,16 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data () {
+    return {
+      title: 'old'
+    }
+  },
+  methods: {
+    changeTitle (value) {
+      this.title = value
+    }
   }
 }
 </script>
